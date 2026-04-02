@@ -1,12 +1,19 @@
+import { GradientBars } from "@/components/gradient-bars";
+import { PixelGridShader } from "@/components/pixelgrid-shader";
 import TechStackSection from "@/components/TechStackSection";
+import { Typewriter } from "@/components/typewriter";
+import Work from "@/components/Work";
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function Home() {
   return (
-    <main className="bg-black w-full h-full"> 
+    <main className="bg-black w-full h-full">
+      <PixelGridShader shape="plasma" colorFg="#00ff00" />
 
-      <div className="flex flex-row justify-between px-12 text-white py-6 font-bold">
+      <div className="pb-56">
+        <div className="flex flex-row justify-between px-12 text-white py-6 font-bold">
         <h1>Aadit Bhambri</h1>
         <nav className="flex flex-row gap-4">
           <Link href={'#about'}>About</Link>
@@ -23,17 +30,32 @@ export default function Home() {
         </div>
         <div className=" hidden md:flex">
           <div className="absolute right-28 top-16 text-white">
-            <h1>Web Developer</h1>
+            <Typewriter
+              className=""
+              words={["Developer", "Designer", "Game Developer"]}
+              cursor={false}
+            />
           </div>
           <div className="absolute right-12 text-white">
-            <h1>UI Designer</h1>
+            <Typewriter
+              className=""
+              words={[ "Designer", "Game Developer","Developer", ]}
+              cursor={false}
+            />
           </div>
           <div className="absolute left-28 top-96 text-white flex flex-row">
-            <h1>Game Developer</h1>
+            <Typewriter
+              className=""
+              words={[ "Game Developer", "Developer", "Designer",]}
+              cursor={false}
+            />
           </div>
         </div>
       </div>
+      </div> 
+      
       <TechStackSection />
+      <Work />
     </main>
     
   );

@@ -4,9 +4,9 @@ import StackCircle from './StackCircle'
 
 const TechStackSection = () => {
   return (
-    <div className='flexx flex-col justify-center items-center bg-black pt-56 text-white'>
+    <div className='flex flex-col justify-center items-center py-56 text-white'>
         <h1 className='text-4xl font-bold text-center'>What I work with</h1>
-        <div className='flex justify-center flex-col items-center pt-10 gap-3'>
+        <div className='flex justify-center flex-col items-center py-10 gap-3'>
             {/* Row 1 */}
             <div className='flex flex-row gap-24'>
                 {/* Next Logo */}
@@ -30,25 +30,20 @@ const TechStackSection = () => {
                 {/* Typescript Logo */}
                 <StackCircle name='Typescript' image='/TypeScript.svg' />
 
-                {/* React Logo */}
-                <div className='bg-[#2B2B2B] rounded-full justify-center items-center flex'>
-                    <div className="p-4"><Image src={"/Nextjs.png"} width={37} height={37} alt='Next.js Logo' className='' /></div>
-                </div>
+                {/* Godot Logo */}
+                <StackCircle name='Godot' image='/GodotEngine.png' />
+
             </div>
             {/* Row 3 */}
             <div className='flex flex-row gap-24'>
                 {/* Next Logo */}
-                <div className='bg-[#2B2B2B] rounded-full justify-center items-center flex'>
-                    <div className="p-4"><Image src={"/Nextjs.png"} width={37} height={37} alt='Next.js Logo' className='' /></div>
-                </div>
+                <StackCircle name='Vite' image='/Vitejs.png' />
+
                 {/* React Logo */}
-                <div className='bg-[#2B2B2B] rounded-full justify-center items-center flex'>
-                    <div className="p-4"><Image src={"/Nextjs.png"} width={37} height={37} alt='Next.js Logo' className='' /></div>
-                </div>
+                <StackCircle name='Python' image='/Python.png' />
+
                 {/* Appwrite Logo */}
-                <div className='bg-[#2B2B2B] rounded-full justify-center items-center flex'>
-                    <div className="p-4"><Image src={"/Nextjs.png"} width={37} height={37} alt='Next.js Logo' className='' /></div>
-                </div>
+                <StackCircle name='Appwrite' image='/Appwrite 1.png' />
                 
             </div>
         </div>
