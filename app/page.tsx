@@ -20,15 +20,15 @@ export default function Home() {
       <div className="relative z-10 w-full">
         
         {/* Navigation & Hero Section */}
-        <section className="relative pb-56">
+        <section className="relative pb-2 md:pb-56">
           <Navbar />
 
           <div className="pt-24">
             <div className="flex flex-col justify-center items-center text-center">
-              <h1 className="font-bold text-white text-9xl border-dashed border-2 p-10 border-[#7F7F7F]">
+              <h1 className="font-bold text-white md:text-9xl text-5xl border-dashed border-2 p-10 border-[#7F7F7F]">
                 AADIT
               </h1>
-              <h1 className="font-bold text-9xl text-white">BHAMBRI</h1>
+              <h1 className="font-bold md:text-9xl text-7xl text-white">BHAMBRI</h1>
               <p className="text-white font-bold mt-4">
                 Crafting experiences not just pieces of software
               </p>
