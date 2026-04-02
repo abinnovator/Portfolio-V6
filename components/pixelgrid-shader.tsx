@@ -221,6 +221,7 @@ export function PixelGridShader({
 
   const rafRef = useRef<number>(0)
   const startTimeRef = useRef(Date.now())
+  const frameCountRef = useRef(0)
 
   useEffect(() => {
     stateRef.current = {
@@ -252,6 +253,49 @@ export function PixelGridShader({
   ])
 
   useEffect(() => {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+    
+    if (prefersReducedMotion) {
+      // Render a single static frame
+      const canvas = canvasRef.current!
+      const container = containerRef.current!
+      const ctx = canvas.getContext("2d")!
+      const dpr = window.devicePixelRatio || 1
+      const W = container.clientWidth
+      const H = container.clientHeight
+      canvas.width = Math.round(W * dpr)
+      canvas.height = Math.round(H * dpr)
+      canvas.style.width = W + "px"
+      canvas.style.height = H + "px"
+      
+      const s = stateRef.current
+      const ps = Math.max(1, Math.floor(s.pxSize * dpr))
+      const cols = Math.ceil(canvas.width / ps)
+      const rows = Math.ceil(canvas.height / ps)
+      const [r, g, b] = hexToRgb(s.colorFg)
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.fillStyle = `rgb(${r}, ${g}, ${b})`
+      const aspect = canvas.width / canvas.height
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          let nx = col / cols - 0.5
+          let ny = row / rows - 0.5
+          if (aspect > 1) nx *= aspect
+          else ny /= aspect
+          const signal = evalShape(nx, ny, 0, s)
+          const threshold = getBayer(col, row, s.matrix)
+          if (signal > threshold) {
+            ctx.fillRect(col * ps, row * ps, ps, ps)
+          }
+        }
+      }
+      return
+    }
+
     const canvas = canvasRef.current!
     const container = containerRef.current!
     const ctx = canvas.getContext("2d")!
@@ -273,6 +317,14 @@ export function PixelGridShader({
     ro.observe(container)
 
     const render = () => {
+      // Frame throttling: render every 2nd frame for 50% performance boost
+      // This keeps the animation smooth (still 30fps) while halving CPU usage
+      frameCountRef.current++
+      if (frameCountRef.current % 2 !== 0) {
+        rafRef.current = requestAnimationFrame(render)
+        return
+      }
+
       const s = stateRef.current
       const elapsed = (Date.now() - startTimeRef.current) * 0.001 * s.speed
 

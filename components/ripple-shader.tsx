@@ -47,6 +47,17 @@ export function RippleShader({
 
   useEffect(() => {
     if (!containerRef.current) return
+    
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+    
+    if (prefersReducedMotion) {
+      // Don't render animation if user prefers reduced motion
+      return
+    }
+    
     const container = containerRef.current
 
     const parseCSSColor = (varName: string): [number, number, number] => {

@@ -23,11 +23,21 @@ export function Typewriter({
   const [isDeleting, setIsDeleting] = useState(false)
   const [wordIndex, setWordIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
-  const [showCursor, setShowCursor] = useState(true)
 
   const currentWord = words[wordIndex]
 
   useEffect(() => {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+    
+    if (prefersReducedMotion) {
+      // Just show the first word statically
+      setDisplayText(words[0] || "")
+      return
+    }
+
     const timeout = setTimeout(
       () => {
         // Typing logic
@@ -67,30 +77,27 @@ export function Typewriter({
     words,
   ])
 
-  // Cursor blinking effect
-  useEffect(() => {
-    if (!cursor) return
-
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev)
-    }, 500)
-
-    return () => clearInterval(cursorInterval)
-  }, [cursor])
-
   return (
     <div className="inline-block">
       <span className={className}>
         {displayText}
         {cursor && (
           <span
-            className="ml-1 transition-opacity duration-75"
-            style={{ opacity: showCursor ? 1 : 0 }}
+            className="ml-1 inline-block"
+            style={{
+              animation: "blink 1s step-end infinite",
+            }}
           >
             {cursorChar}
           </span>
         )}
       </span>
+      <style jsx>{`
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          50.01%, 100% { opacity: 0; }
+        }
+      `}</style>
     </div>
   )
 }
