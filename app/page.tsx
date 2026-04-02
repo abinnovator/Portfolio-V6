@@ -16,8 +16,8 @@ export default function Home() {
         <div className="flex flex-row justify-between px-12 text-white py-6 font-bold">
         <h1>Aadit Bhambri</h1>
         <nav className="flex flex-row gap-4">
-          <Link href={'#about'}>About</Link>
-          <Link href={"#work"}>Work</Link>
+          <Link href={'/about'}>About</Link>
+          <Link href={"/work"}>Work</Link>
 
         </nav>
       </div>
