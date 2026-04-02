@@ -6,7 +6,6 @@ import ProjectCard from './ProjectCard'
 const Work = () => {
   return (
     <div>
-        <PixelGridShader shape="plasma" colorFg="#00ff00" />
         <div className='flex flex-col gap-10'>
             <Header title='My work' desc='A snapshot of my recent work' />
             <div className="px-20 gap-6 flex flex-col">
