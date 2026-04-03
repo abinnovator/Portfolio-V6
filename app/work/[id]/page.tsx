@@ -2,12 +2,13 @@ import Header from "@/components/Header";
 import { PixelGridShader } from "@/components/pixelgrid-shader";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Projects } from "@/constants";
-import { Globe } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const page = async ({ params }: { params: { id: string } }) => {
+  
   const { id } = await params;
   const project = Projects.find((project) => project.id === id);
   console.log(project);
@@ -18,6 +19,7 @@ const page = async ({ params }: { params: { id: string } }) => {
         <PixelGridShader shape="plasma" colorFg="#00ff00" />
       </div>
       <div className="px-4 sm:px-8 md:px-16 lg:px-28 py-6 sm:py-8 lg:py-10 border-x border-[#262626] overflow-x-hidden relative z-10 w-full">
+        <Link href={'/work'} className="text-white pb-2"><span className="flex flex-row gap-1">Go back <ArrowRight /></span></Link>
         <div className="p-3 sm:p-4 lg:p-5 border border-[#262626] border-dashed justify-center items-center">
             <Image
               src={project?.image || ""}
