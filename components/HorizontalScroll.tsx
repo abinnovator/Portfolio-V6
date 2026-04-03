@@ -42,14 +42,12 @@ export default function HorizontalScroll() {
     <section ref={sectionRef} className="overflow-hidden bg-none">
       <div ref={containerRef} className="flex will-change-transform">
         
-        {/* Opening panel */}
         <div className="min-w-screen w-screen h-screen flex items-center justify-center flex-shrink-0 px-20">
           <h2 className="text-white font-bold text-6xl md:text-8xl">
             My <span className="text-[#00ff00]">Values</span>
           </h2>
         </div>
 
-        {/* Value panels */}
         {items.map((item) => (
           <div
             key={item.number}
