@@ -18,10 +18,10 @@ const page = () => {
         <Navbar />
         <div className="pt-24">
             <div className="flex flex-col justify-center items-center text-center">
-              <h1 className="font-bold text-white text-9xl border-dashed border-2 p-10 border-[#7F7F7F]">
+              <h1 className="font-bold text-white text-6xl md:text-9xl border-dashed border-2 p-10 border-[#7F7F7F]">
                 My Projects!
               </h1>
-              <div className="grid grid-cols-3 gap-10 py-20 px-9 ">
+              <div className="md:grid md:grid-cols-3 flex flex-col gap-10 py-20 px-9 ">
                 {Projects.map((project) => (
                     <ProjectCard
                     key={project.title}
