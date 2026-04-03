@@ -28,7 +28,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <main className="relative bg-black w-full min-h-screen overflow-x-hidden">
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <PixelGridShader shape="plasma" colorFg="#00ff00" />
+        <PixelGridShader shape="plasma" colorFg="#0000ff" />
       </div>
       <div className="px-4 sm:px-8 md:px-16 lg:px-28 py-6 sm:py-8 lg:py-10 border-x border-[#262626] overflow-x-hidden relative z-10 w-full">
         <Link href={'/work'} className="text-white pb-2">

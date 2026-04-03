@@ -15,7 +15,7 @@ const AboutPage = () => {
     <main className="relative bg-black w-full min-h-screen overflow-x-hidden">
 
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <PixelGridShader shape="plasma" colorFg="#00ff00" />
+        <PixelGridShader shape="plasma" colorFg="#0000ff" />
       </div>
 
       <div className="relative z-10 w-full">
