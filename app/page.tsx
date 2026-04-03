@@ -1,8 +1,10 @@
 import { GradientBars } from "@/components/gradient-bars";
+import HorizontalScroll from "@/components/HorizontalScroll";
 import Navbar from "@/components/Navbar";
 import { PixelGridShader } from "@/components/pixelgrid-shader";
 import TechStackSection from "@/components/TechStackSection";
 import { Typewriter } from "@/components/typewriter";
+import ValuesSection from "@/components/ValuesSection";
 import Work from "@/components/Work";
 
 
@@ -50,6 +52,7 @@ export default function Home() {
         </section>
 
         <div className="relative z-20 pointer-events-auto bg-transparent">
+          <HorizontalScroll />
           <TechStackSection />
           <Work />
 
