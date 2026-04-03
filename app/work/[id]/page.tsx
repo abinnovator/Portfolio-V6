@@ -28,7 +28,7 @@ const page = async ({ params }: { params: { id: string } }) => {
               height={300}
               className="object-cover w-full h-full rounded-md transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="py-10"><Header title={project?.title} desc={project?.desc} /></div>
+            <div className="py-10"><Header title={project?.title || ""} desc={project?.desc || ""} /></div>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 w-full sm:w-auto px-4 sm:px-0 justify-center items-center">
               <Link
