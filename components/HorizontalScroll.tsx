@@ -44,7 +44,7 @@ export default function HorizontalScroll() {
         
         <div className="min-w-screen w-screen h-screen flex items-center justify-center flex-shrink-0 px-20">
           <h2 className="text-white font-bold text-6xl md:text-8xl">
-            My <span className="text-[#00ff00]">Values</span>
+            My <span className="text-[#0000ff]">Values</span>
           </h2>
         </div>
 
@@ -54,7 +54,7 @@ export default function HorizontalScroll() {
             className="min-w-screen w-screen h-screen flex-shrink-0 flex items-center justify-center px-20 border-l border-[#7F7F7F]/20"
           >
             <div className="max-w-2xl">
-              <span className="text-[#00ff00] font-bold text-8xl opacity-20">
+              <span className="text-[#0000ff] font-bold text-8xl opacity-20">
                 {item.number}
               </span>
               <h3 className="text-white font-bold text-5xl md:text-7xl mt-4">

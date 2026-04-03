@@ -8,6 +8,8 @@ const Navbar = () => {
         <nav className="flex flex-row gap-4">
             <Link href={'/about'} className="hover:text-green-400 pointer-events-auto">About</Link>
             <Link href={"/work"} className="hover:text-green-400 pointer-events-auto">Work</Link>
+            <Link href={"/contact"} className="hover:text-green-400 pointer-events-auto">Contact</Link>
+
         </nav>
     </div>
   )
