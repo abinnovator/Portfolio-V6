@@ -66,5 +66,38 @@ export const Projects = [
     github: "https://github.com/abinnovator/stamp-web",
     stack: [],
   },
+  {
+    id: "7",
+    title: "Surfer Vscode extension",
+    desc: "An AI based extension for vscode that helps you code faster by allowing tasks you dont want to do to be done by ai in the background while you focus on the important sutff.",
+    image: "/surfer.png",
+    caseStudy:
+      "So I got annoyed of always having to move big files or refactor large chunks of code to run a test case here and there I mean most of the time when I am coding I know what I want to do and I just want to get it done but I always end up wasting my time on these menial tasks so I decided to build an extension that would help me do these tasks faster. I have always loved the idea of an AI that could understand my code and help me with these tasks so I decided to take matters into my own hands",
+    website: "https://surfer-web-five.vercel.app",
+    github: "https://github.com/Abinnovator/surfer-extension",
+    stack: [],
+  },
+  {
+    id: "8",
+    title: "Flavortown Mobile",
+    desc: "I ported flavortown into a mobile app! So you can see your stats, achievements, projects and all users. You can create projects but you cant create devlogs from the app due to ft api restrictions.",
+    image: "/ftmobile.png",
+    caseStudy:
+      "I ported flavortown into a mobile app! So you can see your stats, achievements, projects and all users. You can create projects but you cant create devlogs from the app due to ft api restrictions.",
+    website: "https://ft-mobile-website.vercel.app",
+    github: "https://github.com/abinnovator/ft-mobile",
+    stack: [],
+  },
+  {
+    id:"9",
+    title: "Flavorbot",
+    desc: "This is a discord bot which will allow you to create devlogs, check balance and stuff from discord! I have also added a shop tracker which tracks the changes in items in the shop. Hosted on railway. To see the commands check out the readme",
+    image: "/flavorbot.png",
+    caseStudy:
+      "This is a discord bot which will allow you to create devlogs, check balance and stuff from discord! I have also added a shop tracker which tracks the changes in items in the shop. Hosted on railway. To see the commands check out the readme",
+    website: "",
+    github: "https://github.com/abinnovator/flavorbot",
+    stack: [],
+  }
 
 ];
